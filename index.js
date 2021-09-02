@@ -4,11 +4,10 @@ const { Routes } = require('discord-api-types/v9');
 const config = require('./config.json');
 const fs = require('fs');
 const { Client, Intents, MessageEmbed } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intetnts.FLAGS.GUILD_INTERACTIONS] });
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-const clientId = config.CLIENT_ID;
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -38,9 +37,8 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '9' }).setToken(config.token);
 
-client.on("ready", () => {
+client.on("ready", async () => {
     console.log(`Logged as in ${client.user.tag}`);
-    (async () => {
         try {
             await rest.put(
                 Routes.applicationCommands(client.user.id),
@@ -51,7 +49,6 @@ client.on("ready", () => {
         } catch (error) {
             console.error(error);
         }
-    })();
 })
 
 client.on('interactionCreate', async interaction => {

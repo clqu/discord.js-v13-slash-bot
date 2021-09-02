@@ -4,7 +4,7 @@ const { Routes } = require('discord-api-types/v9');
 const config = require('./config.json');
 const fs = require('fs');
 const { Client, Intents, MessageEmbed } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intetnts.FLAGS.GUILD_INTERACTIONS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));

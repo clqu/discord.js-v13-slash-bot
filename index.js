@@ -10,8 +10,6 @@ const fs = require('fs');
 const client = new Client({
     intents: config.client.intents,
 });
-discordModals(client);
-
 // =================================================================================== \\
 
 let commands = [];

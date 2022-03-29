@@ -5,7 +5,7 @@ module.exports = {
     options: [
         { type: 6, name: 'user', description: 'Mention user.', required: false },
         { type: 7, name: 'channel', description: 'Mention channel.', required: false }
-        /* 
+        /*
             If you search more option types?
             Check it; https://github.com/clqu/discord.js-v13-slash-bot#for-developers
         */

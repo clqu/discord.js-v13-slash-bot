@@ -5,7 +5,6 @@ const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const fs = require('fs');
 
-
 // =================================================================================== \\
 const client = new Client({
     intents: config.client.intents,
@@ -74,7 +73,6 @@ client.on("interactionCreate", async (interaction) => {
     // ========[ COMMAND BUILDER ]========== \\
 });
 
-
 // =================================================================================== \\
 client.once("ready", () => {
     // ================ \\
@@ -86,7 +84,6 @@ client.once("ready", () => {
 })
 
 // =================================================================================== \\
-
 
 // =================================================================================== \\
 client.login(config.client.token);

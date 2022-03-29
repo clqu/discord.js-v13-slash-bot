@@ -1,6 +1,5 @@
 const { Intents } = Discord;
 
-
 module.exports = {
     client: {
         token: "",
